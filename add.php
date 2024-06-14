@@ -1,8 +1,32 @@
 <?php 
     if(isset($_POST['submit'])){
-        echo $_POST['email'];
-        echo $_POST['title'];
-        echo $_POST['ingrediants'];
+      //  echo $_POST['email'];
+       // echo $_POST['title'];
+       // echo $_POST['ingrediants'];
+
+       //check email
+       if(empty($_POST['email'])){
+            echo 'an email is required  ';
+       }
+       else{
+            echo $_POST['email'];
+       }
+
+              //check title
+       if(empty($_POST['title'])){
+             echo 'title is required  ';
+        }
+       else{
+             echo $_POST['title'];
+           }
+
+             //check ingrediants
+       if(empty($_POST['ingrediants'])){
+        echo 'ingrediants is required  ';
+        }
+       else{
+         echo $_POST['ingrediants'];
+        }  
     }
 
 ?>
