@@ -9,7 +9,10 @@
             echo 'an email is required  ';
        }
        else{
-            echo $_POST['email'];
+            $email = $_POST['email'];
+            if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+                echo 'email must be a valid email address  ';
+            }
        }
 
               //check title
