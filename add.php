@@ -11,7 +11,7 @@
        else{
             $email = $_POST['email'];
             if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-                echo 'email must be a valid email address  ';
+                echo 'email must be a valid email address.  ';
             }
        }
 
@@ -20,15 +20,21 @@
              echo 'title is required  ';
         }
        else{
-             echo $_POST['title'];
+             $title = $_POST['title'];
+             if(!preg_match('/^[a-zA-Z\s]+$/',$title)){
+                  echo 'title must be letters and spaces only.   '  ;
+             }
            }
 
              //check ingrediants
        if(empty($_POST['ingrediants'])){
-        echo 'ingrediants is required  ';
+        echo 'atleast one ingrediant is required  ';
         }
        else{
-         echo $_POST['ingrediants'];
+        $ingrediants = $_POST['ingrediants'];
+        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/',$ingrediants)){
+             echo 'ingrediants must be a comma seperated list.   '  ;
+        }
         }  
     }
 
