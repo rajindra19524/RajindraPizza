@@ -23,7 +23,7 @@
    //close the connection
    mysqli_close($conn);
 
-
+  //print_r(explode(',' , $pizzas[0]['ingrediants']));
 
 
 
@@ -46,7 +46,11 @@
                     <div class="card">
                         <div class="card-content center">
                             <h6><?php echo $pizza['title'];?></h6>
-                            <div><?php echo $pizza['ingrediants'];?></div>
+                            <ul>
+                                <?php foreach(explode("," , $pizza['ingrediants']) as $ing){?>
+                                       <li><?php echo $ing ; ?></li>
+                                <?php } ?> 
+                            </ul>
                         </div>
                         <div class="card-action right-align">
                             <a class="brand-text">more info</a>
