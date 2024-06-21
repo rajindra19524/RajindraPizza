@@ -46,6 +46,7 @@
             <?php foreach($pizzas as $pizza): ?>
                 <div class="col s6 m3">
                     <div class="card">
+                        <img  src="./img/pizza.svg" class="pizza">
                         <div class="card-content center">
                             <h6><?php echo $pizza['title'];?></h6>
                             <ul>
